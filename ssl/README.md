@@ -83,7 +83,7 @@ sudo systemctl reload nginx
 Sau đó truy cập: `https://tech.training.vietnix.tech`
 
 > ⚠️ Vì đây là chứng chỉ tự ký nên trình duyệt sẽ hiển thị cảnh báo bảo mật.
-
+![SSL](picture/Screenshot from 2025-06-10 10-57-53.png)
 ---
 
 ## ❓ Pem file là gì?
