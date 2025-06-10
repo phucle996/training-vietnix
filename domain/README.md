@@ -32,16 +32,3 @@ Virtual Hosts có 2 loại:
 
 1. **Name-based Virtual Host**: phân biệt theo tên domain.
 2. **IP-based Virtual Host**: phân biệt theo địa chỉ IP khác nhau.
-
-```server {
-    listen 80;
-    server_name example.com;
-    root /var/www/example.com;
-}
-
-server {
-    listen 80;
-    server_name blog.example.com;
-    root /var/www/blog.example.com;
-}
-
