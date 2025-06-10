@@ -84,7 +84,7 @@ Sau đó truy cập: `https://tech.training.vietnix.tech`
 
 > ⚠️ Vì đây là chứng chỉ tự ký nên trình duyệt sẽ hiển thị cảnh báo bảo mật.
 
-![SSL](picture/Screenshot.png)
+![SSL](./picture/Screenshot.png)
 ---
 
 ## ❓ Pem file là gì?
