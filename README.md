@@ -6,7 +6,7 @@ A: SSL là viết tắt của Secure Socket Layer, dùng để mã hoá dữ li�
 
 Q: Có bao nhiêu cách chứng thực SSL ?
 
-A: có 3 cách , chúng thức phía máy chủ, chứng thực phía máy khách và chứng thực 2 chiều
+A: có 3 cách , chứng thực phía máy chủ, chứng thực phía máy khách và chứng thực 2 chiều
 
 Q: CSR file dùng làm gì trong quá trình tạo SSL
 
@@ -36,4 +36,22 @@ step4: install và config nginx: khai báo ssl public key, private key, sửa po
 
 step5: reload nginx và vào web 
 
+Q: Pem file là gì ?
 
+A: file .pem là file dạng text có header và footer là begin và end, nội dung được mã hoá base 64
+
+Q: Private key ssl là gì ?
+
+A: Private key là file mà server dùng để giải mã dữ liệu được gửi tới
+
+Q: PFX file là gì ? Cách chuyển từ file crt file sang PFX file
+
+A: pfx là file binary chứa CA và private key
+
+Q: Domain là gì ? 
+
+A: Doamin là 1 địa chỉ dễ nhớ thay vì phải nhớ 1 địa chỉ ip khó nhớ
+
+Q: Các trạng thái của domain
+
+A: 
