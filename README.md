@@ -1,57 +1,122 @@
 # training-vietnix-day2
 
-Q: SSL là gì ?
+## ❓ SSL là gì?
 
-A: SSL là viết tắt của Secure Socket Layer, dùng để mã hoá dữ liệu từ client tới server
+**SSL** là viết tắt của **Secure Socket Layer**, dùng để **mã hoá dữ liệu từ client tới server** nhằm đảm bảo an toàn thông tin khi truyền tải trên Internet.
 
-Q: Có bao nhiêu cách chứng thực SSL ?
+---
 
-A: có 3 cách , chứng thực phía máy chủ, chứng thực phía máy khách và chứng thực 2 chiều
+## ❓ Có bao nhiêu cách chứng thực SSL?
 
-Q: CSR file dùng làm gì trong quá trình tạo SSL
+Có **3 cách chứng thực SSL**:
 
-A: file có đuôi .csr là file chứa thông tin của domain của mình và dùng để xin chứ kí số của bên thứ 3. Nếu bên thứ 3 kí vào thì sẽ trả về file.crt
+1. **Chứng thực phía máy chủ** (Server Authentication)
+2. **Chứng thực phía máy khách** (Client Authentication)
+3. **Chứng thực 2 chiều** (Mutual Authentication)
 
-Q: Sử dụng OpenSSL để gen file CSR sau đó request SSL cho domain tech.training.vietnix.tech
+---
 
-A: 
-step1: tạo private key : 
+## ❓ CSR file dùng làm gì trong quá trình tạo SSL?
+
+* File `.csr` (**Certificate Signing Request**) chứa thông tin domain và public key.
+* Dùng để **yêu cầu bên thứ 3 (CA)** cấp chứng chỉ số.
+* Sau khi được ký, CA sẽ trả lại file `.crt` (certificate).
+
+---
+
+## 🔧 Sử dụng OpenSSL để gen file CSR sau đó request SSL cho domain `tech.training.vietnix.tech`
+
+### ✅ Step 1: Tạo private key
+
+```bash
 openssl genrsa -out tech.training.vietnix.tech.key 2048
+```
 
-Step2: tạo file csr:
+---
+
+### ✅ Step 2: Tạo file CSR
+
+```bash
 openssl req -new -key tech.training.vietnix.tech.key -out tech.training.vietnix.tech.csr
+```
 
-Step3: tự kí vào file csr:
+---
+
+### ✅ Step 3: Tự ký vào file CSR (self-signed)
+
+```bash
 openssl x509 -req -in tech.training.vietnix.tech.csr \
   -signkey tech.training.vietnix.tech.key \
   -out tech.training.vietnix.tech.crt \
   -days 365
+```
 
-step4: install và config nginx: khai báo ssl public key, private key, sửa port listen và server name bên trong block server 
+---
+
+### ✅ Step 4: Cài đặt và cấu hình Nginx
+
+Cấu hình block `server` trong file Nginx như sau:
+
+```nginx
+server {
     listen 443 ssl;
     server_name tech.training.vietnix.tech;
 
     ssl_certificate     /etc/ssl/certs/tech.training.vietnix.tech.crt;
     ssl_certificate_key /etc/ssl/private/tech.training.vietnix.tech.key;
 
-step5: reload nginx và vào web 
+    location / {
+        root /var/www/html;
+        index index.html;
+    }
+}
+```
 
-Q: Pem file là gì ?
+---
 
-A: file .pem là file dạng text có header và footer là begin và end, nội dung được mã hoá base 64
+### ✅ Step 5: Reload Nginx và truy cập web
 
-Q: Private key ssl là gì ?
+```bash
+sudo systemctl reload nginx
+```
 
-A: Private key là file mà server dùng để giải mã dữ liệu được gửi tới
+Sau đó truy cập: `https://tech.training.vietnix.tech`
 
-Q: PFX file là gì ? Cách chuyển từ file crt file sang PFX file
+> ⚠️ Vì đây là chứng chỉ tự ký nên trình duyệt sẽ hiển thị cảnh báo bảo mật.
 
-A: pfx là file binary chứa CA và private key
+---
 
-Q: Domain là gì ? 
+Pem file là gì?
 
-A: Doamin là 1 địa chỉ dễ nhớ thay vì phải nhớ 1 địa chỉ ip khó nhớ
+A: File .pem là một file dạng văn bản (text) có phần đầu và cuối đặc trưng:
 
-Q: Các trạng thái của domain
+-----BEGIN CERTIFICATE-----
+(nội dung mã hóa Base64)
+-----END CERTIFICATE-----
 
-A: 
+File PEM thường chứa certificate (chứng chỉ), key, hoặc cả hai, được mã hóa theo định dạng Base64.
+
+Private key SSL là gì?
+
+A: Private key là khóa bí mật mà server giữ riêng, dùng để giải mã dữ liệu đã được mã hóa bằng public key. Nó rất quan trọng trong việc đảm bảo an toàn truyền thông qua SSL/TLS.
+
+PFX file là gì? Cách chuyển từ file .crt sang .pfx?
+
+A: File .pfx (hoặc .p12) là file nhị phân (binary) chứa:
+
+Chứng chỉ (certificate)
+
+Khóa riêng (private key)
+
+Và chuỗi chứng chỉ của CA (certificate chain)
+
+✅ Cách chuyển từ .crt và .key sang .pfx:
+
+openssl pkcs12 -export \
+  -out domain.pfx \
+  -inkey domain.key \
+  -in domain.crt \
+  -certfile ca_bundle.crt
+
+ca_bundle.crt là chuỗi chứng chỉ của CA nếu có
+
