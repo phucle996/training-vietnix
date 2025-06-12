@@ -17,5 +17,5 @@ cài plugin all in one migration vào wordpress mới
 Import file wpress đã export từ trước đó
 ![Mô tả ảnh](/day4/img/importwebsite.png)
 
-
-
+Import xong là trang wordpress sẽ có thể hoạt động bình thường
+![Mô tả ảnh](/day4/img/import.png)
