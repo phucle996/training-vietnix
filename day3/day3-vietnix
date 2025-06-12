@@ -1,0 +1,22 @@
+db :
+db name: db_wp_training_day3
+user : admin
+passwd: 2YM8wx3ZndrRNpx6
+
+
+webwordpress: 
+
+user : admin 
+pass: 27102004
+
+
+
+laravel :
+
+db name:  linhlt_db
+username:	admin_laravel
+pass:HdjFpmjbxArJZXZd
+
+
+
+
