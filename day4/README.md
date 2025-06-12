@@ -5,4 +5,3 @@ setup 1 wordpress mới
 
 cài plugin all in one migration vào wordpress mới và import file wpress đã export từ trước đó
 
-
