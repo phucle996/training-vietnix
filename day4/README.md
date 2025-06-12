@@ -1,6 +1,6 @@
 Trên site wordpress cũ vào plugin all in one migration và sau đó export ra 1 file wpress
 
-![Mô tả ảnh](/img/pic1.png)
+![Mô tả ảnh](/img/day4/pic1.png)
 
 
 Tiếp đó sẽ vào cpanel , domain đã được setup sẵn nhưng hiện tại đang trỏ về ip vps cũ 
