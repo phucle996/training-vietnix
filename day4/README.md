@@ -1,36 +1,96 @@
-Trên site wordpress cũ vào plugin all in one migration và sau đó export ra 1 file wpress
+# 🚀 Chuyển website WordPress sang hosting mới
 
-![Mô tả ảnh](/day4/img/pic1.png)
+Quy trình này sẽ **chuyển toàn bộ website WordPress** từ VPS cũ sang hosting mới, thông qua plugin **All-in-One WP Migration**
 
-Tiếp đó sẽ vào cpanel , domain đã được setup sẵn nhưng hiện tại đang trỏ về ip vps cũ
-![Mô tả ảnh](/day4/img/checkdomain.png)
+---
 
-Hiện tại cần phải sửa lại file host để trỏ lại về ip của hosting
-![Mô tả ảnh](/day4/img/domain.png)
+## 🧰 Bước 1: Export dữ liệu từ website WordPress cũ
 
-Setup 1 wordpress mới
-![Mô tả ảnh](/day4/img/newwordpress.png)
+Truy cập vào website cũ, cài đặt và mở plugin **All-in-One WP Migration**, sau đó export toàn bộ website ra file `.wpress`.
 
-cài plugin all in one migration vào wordpress mới
-![Mô tả ảnh](/day4/img/installplugin.png)
+<p align="center">
+  <img src="/day4/img/pic1.png" alt="Export wpress" width="500"/>
+</p>
 
-Import file wpress đã export từ trước đó
-![Mô tả ảnh](/day4/img/importwebsite.png)
+---
 
-Import xong là trang wordpress sẽ có thể hoạt động bình thường
-![Mô tả ảnh](/day4/img/import.png)
+## 🌐 Bước 2: Kiểm tra domain đang trỏ về đâu
 
-Cài đặt các plugin :
-    - Elementor:
+Domain đã được cài đặt sẵn, tuy nhiên hiện tại nó vẫn đang trỏ về IP của VPS cũ.
 
-![Mô tả ảnh](/day4/img/elementor.png)
+<p align="center">
+  <img src="/day4/img/checkdomain.png" alt="Check domain" width="500"/>
+</p>
 
-    - Rank math SEO :
+---
 
-![Mô tả ảnh](/day4/img/rankmathseo.png)
+## 🛠️ Bước 3: Sửa file `hosts` để trỏ domain về IP hosting mới
 
+Trước khi cập nhật DNS thật, cần chỉnh file `hosts` trên máy tính để trỏ domain về IP hosting mới
 
-về 2 plugin LiteSpeed Cache và WP-Optimize :
-- WP-Optimize chỉ nên dùng khi hosting không dùng lite speed
-- LiteSpeed Cache ưu tiên dùng nếu hosting có lite speed
-- không nên dùng cả 2
+<p align="center">
+  <img src="/day4/img/domain.png" alt="Chỉnh file host" width="500"/>
+</p>
+
+---
+
+## 🆕 Bước 4: Cài đặt WordPress mới trên hosting mới
+
+Thực hiện cài đặt một trang WordPress mới trên hosting đã chuẩn bị.
+
+<p align="center">
+  <img src="/day4/img/newwordpress.png" alt="Setup WordPress mới" width="500"/>
+</p>
+
+---
+
+## 🔌 Bước 5: Cài plugin All-in-One WP Migration vào WordPress mới
+
+<p align="center">
+  <img src="/day4/img/installplugin.png" alt="Cài plugin" width="500"/>
+</p>
+
+---
+
+## 📥 Bước 6: Import file `.wpress` đã export từ trước
+
+Sử dụng plugin vừa cài để **Import lại toàn bộ dữ liệu** vào site mới.
+
+<p align="center">
+  <img src="/day4/img/importwebsite.png" alt="Import wpress" width="500"/>
+</p>
+
+---
+
+## ✅ Bước 7: Website đã sẵn sàng hoạt động bình thường
+
+Sau khi import xong, website mới sẽ có đầy đủ giao diện, bài viết, cấu hình giống website cũ.
+
+<p align="center">
+  <img src="/day4/img/import.png" alt="Website hoạt động" width="500"/>
+</p>
+
+---
+
+## 🔧 Bước 8: Cài đặt các plugin cần thiết
+
+### 🔹 Elementor — trình dựng giao diện kéo thả
+
+<p align="center">
+  <img src="/day4/img/elementor.png" alt="Elementor" width="300"/>
+</p>
+
+### 🔹 Rank Math SEO — hỗ trợ tối ưu công cụ tìm kiếm
+
+<p align="center">
+  <img src="/day4/img/rankmathseo.png" alt="Rank Math SEO" width="300"/>
+</p>
+
+---
+
+## ⚠️ Ghi chú quan trọng về plugin tối ưu tốc độ
+
+- ✅ **WP-Optimize**: *Chỉ dùng khi hosting KHÔNG hỗ trợ LiteSpeed.*
+- ✅ **LiteSpeed Cache**: *Ưu tiên dùng nếu hosting có LiteSpeed.*
+- ❌ **Không nên cài cùng lúc cả hai plugin trên** để tránh xung đột.
+
