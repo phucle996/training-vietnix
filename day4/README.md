@@ -2,8 +2,9 @@ Trên site wordpress cũ vào plugin all in one migration và sau đó export ra
 
 ![Mô tả ảnh](/day4/img/pic1.png)
 
-
-Tiếp đó sẽ vào cpanel , domain đã được setup sẵn nhưng hiện tại đang trỏ về ip vps cũ 
+Tiếp đó sẽ vào cpanel , domain đã được setup sẵn nhưng hiện tại đang trỏ về ip vps cũ
+![Mô tả ảnh](day4/img/checkdomain.png)
+nên cần sửa lại file host để trỏ lại về 
 Sau đó cần new 1 wordpress và db
 ![Mô tả ảnh](/day4/img/createdb1.png)
 setup 1 wordpress mới
