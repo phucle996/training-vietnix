@@ -19,3 +19,16 @@ Import file wpress đã export từ trước đó
 
 Import xong là trang wordpress sẽ có thể hoạt động bình thường
 ![Mô tả ảnh](/day4/img/import.png)
+
+Cài đặt các plugin :
+    Elementor:
+    ![Mô tả ảnh](/day4/img/elementor.png)
+
+    Rank math SEO :
+    ![Mô tả ảnh](/day4/img/rankmathseo.png)
+
+
+về 2 plugin LiteSpeed Cache và WP-Optimize :
+- WP-Optimize chỉ nên dùng khi hosting không dùng lite speed
+- LiteSpeed Cache ưu tiên dùng nếu hosting có lite speed
+- không nên dùng cả 2
