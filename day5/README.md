@@ -26,7 +26,9 @@ sudo apt install php7.4-fpm -y
 # Cài đặt các module PHP cần thiết cho WordPress
 sudo apt install php7.4-cli php7.4-common php7.4-mysql php7.4-xml php7.4-mbstring php7.4-curl php7.4-zip php7.4-bcmath -y
 ```
-
+<p align="center">
+  <img src="/day5/images/php7.4.png" alt="php7.4" width="500"/>
+</p>
 👍 PHP 7.4 đã sẵn sàng để chạy WordPress
 
 ### ⚙️ PHP 8.2 để chạy Laravel
@@ -35,7 +37,9 @@ sudo apt install php7.4-cli php7.4-common php7.4-mysql php7.4-xml php7.4-mbstrin
 # Cài đặt PHP 8.2 và PHP-FPM
 sudo apt install php8.2-fpm -y
 ```
-
+<p align="center">
+  <img src="/day5/images/php8.2.png" alt="php8.2" width="500"/>
+</p>
 👍 PHP 8.2 đã sẵn sàng để chạy Laravel
 
 ### 🔒 Cấu hình `open_basedir` cho PHP 8.2
@@ -61,7 +65,9 @@ sudo systemctl restart php8.2-fpm
 ```bash
 sudo apt install mariadb-server -y
 ```
-
+<p align="center">
+  <img src="/day5/images/mariadb.png" alt="mariadb" width="500"/>
+</p>
 ### 🌍 Cấu hình cho phép truy cập MariaDB từ xa
 
 Mở file cấu hình:
@@ -118,6 +124,9 @@ GRANT ALL PRIVILEGES ON laravel.* TO 'laravel_admin'@'%';
 FLUSH PRIVILEGES;
 EXIT;
 ```
+<p align="center">
+  <img src="/day5/images/database.png" alt="" width="500"/>
+</p>
 
 ## 🧮 6. Cài đặt phpMyAdmin
 
@@ -130,8 +139,10 @@ sudo apt install phpmyadmin -y
 ```bash
 sudo apt install apache2 -y
 ```
-
-Cấu hình VirtualHost cho phpMyAdmin, WordPress và Laravel (file đính kèm)
+<p align="center">
+  <img src="/day5/images/apache.png" alt="" width="500"/>
+</p>
+Cấu hình VirtualHost cho phpMyAdmin, WordPress và Laravel (file config trong folder apache)
 
 Kích hoạt site:
 
@@ -180,10 +191,12 @@ php artisan view:clear
 ```bash
 sudo apt install nginx -y
 ```
-
+<p align="center">
+  <img src="/day5/images/nginx.png" alt="" width="500"/>
+</p>
 ## 🔁 9. Cấu hình Nginx
 
-Tạo các file trong `/etc/nginx/sites-available/`, dùng `proxy_pass` để chuyển tiếp tới Apache local.
+Tạo các file trong `/etc/nginx/sites-available/`, dùng `proxy_pass` để chuyển tiếp tới Apache local. (file config trong folder nginx)
 
 Cấu hình SSL termination với ZeroSSL.
 
@@ -223,4 +236,4 @@ echo "Default page" > /var/www/default/index.html
 
 ### 🅽 Nginx:
 
-Tạo cấu hình server mặc định trong `sites-available/default`
+Tạo cấu hình server mặc định trong `sites-available/default`  
