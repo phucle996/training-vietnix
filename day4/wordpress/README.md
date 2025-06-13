@@ -4,7 +4,7 @@ Quy trình này sẽ **chuyển toàn bộ website WordPress** từ VPS cũ sang
 
 ---
 
-## 🧰 Bước 1: Export dữ liệu từ website WordPress cũ
+## 🧰 Export dữ liệu từ website WordPress cũ
 
 Truy cập vào website cũ, cài đặt và mở plugin **All-in-One WP Migration**, sau đó export toàn bộ website ra file `.wpress`.
 
@@ -14,7 +14,7 @@ Truy cập vào website cũ, cài đặt và mở plugin **All-in-One WP Migrati
 
 ---
 
-## 🌐 Bước 2: Kiểm tra domain đang trỏ về đâu
+## 🌐 Kiểm tra domain đang trỏ về đâu
 
 Domain đã được cài đặt sẵn, tuy nhiên hiện tại nó vẫn đang trỏ về IP của VPS cũ.
 
@@ -24,7 +24,7 @@ Domain đã được cài đặt sẵn, tuy nhiên hiện tại nó vẫn đang 
 
 ---
 
-## 🛠️ Bước 3: Sửa file `hosts` để trỏ domain về IP hosting mới
+## 🛠️ Sửa file `hosts` để trỏ domain về IP hosting mới
 
 Trước khi cập nhật DNS thật, cần chỉnh file `hosts` trên máy tính để trỏ domain về IP hosting mới
 
@@ -34,7 +34,7 @@ Trước khi cập nhật DNS thật, cần chỉnh file `hosts` trên máy tín
 
 ---
 
-## 🆕 Bước 4: Cài đặt WordPress mới trên hosting mới
+## 🆕 Cài đặt WordPress mới trên hosting mới
 
 Thực hiện cài đặt một trang WordPress mới trên hosting đã chuẩn bị.
 
@@ -44,7 +44,7 @@ Thực hiện cài đặt một trang WordPress mới trên hosting đã chuẩn
 
 ---
 
-## 🔌 Bước 5: Cài plugin All-in-One WP Migration vào WordPress mới
+## 🔌 Cài plugin All-in-One WP Migration vào WordPress mới
 
 <p align="center">
   <img src="/day4/wordpress/img/installplugin.png" alt="Cài plugin" width="500"/>
@@ -52,7 +52,7 @@ Thực hiện cài đặt một trang WordPress mới trên hosting đã chuẩn
 
 ---
 
-## 📥 Bước 6: Import file `.wpress` đã export từ trước
+## 📥 Import file `.wpress` đã export từ trước
 
 Sử dụng plugin vừa cài để **Import lại toàn bộ dữ liệu** vào site mới.
 
@@ -62,7 +62,17 @@ Sử dụng plugin vừa cài để **Import lại toàn bộ dữ liệu** vào
 
 ---
 
-## ✅ Bước 7: Website đã sẵn sàng hoạt động bình thường
+## 📥 Import file ssl đã download về từ zero ssl
+
+copy và past nội dung từ 3 file đã download về từ zero ssl 
+
+<p align="center">
+  <img src="/day4/wordpress/img/sslwp.png" alt="Import wpress" width="500"/>
+</p>
+
+---
+
+## ✅ Website đã sẵn sàng hoạt động bình thường
 
 Sau khi import xong, website mới sẽ có đầy đủ giao diện, bài viết, cấu hình giống website cũ.
 
@@ -72,7 +82,7 @@ Sau khi import xong, website mới sẽ có đầy đủ giao diện, bài viế
 
 ---
 
-## 🔧 Bước 8: Cài đặt các plugin cần thiết
+## 🔧 Cài đặt các plugin cần thiết
 
 ### 🔹 Elementor — trình dựng giao diện kéo thả
 
