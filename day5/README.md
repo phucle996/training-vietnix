@@ -68,6 +68,7 @@ sudo apt install mariadb-server -y
 <p align="center">
   <img src="/day5/images/mariadb.png" alt="mariadb" width="500"/>
 </p>
+
 ### 🌍 Cấu hình cho phép truy cập MariaDB từ xa
 
 Mở file cấu hình:
