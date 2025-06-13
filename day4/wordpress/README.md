@@ -9,7 +9,7 @@ Quy trình này sẽ **chuyển toàn bộ website WordPress** từ VPS cũ sang
 Truy cập vào website cũ, cài đặt và mở plugin **All-in-One WP Migration**, sau đó export toàn bộ website ra file `.wpress`.
 
 <p align="center">
-  <img src="/day4/img/pic1.png" alt="Export wpress" width="500"/>
+  <img src="/day4/wordpress/img/pic1.png" alt="Export wpress" width="500"/>
 </p>
 
 ---
@@ -19,7 +19,7 @@ Truy cập vào website cũ, cài đặt và mở plugin **All-in-One WP Migrati
 Domain đã được cài đặt sẵn, tuy nhiên hiện tại nó vẫn đang trỏ về IP của VPS cũ.
 
 <p align="center">
-  <img src="/day4/img/checkdomain.png" alt="Check domain" width="500"/>
+  <img src="/day4/wordpress/img/checkdomain.png" alt="Check domain" width="500"/>
 </p>
 
 ---
@@ -29,7 +29,7 @@ Domain đã được cài đặt sẵn, tuy nhiên hiện tại nó vẫn đang 
 Trước khi cập nhật DNS thật, cần chỉnh file `hosts` trên máy tính để trỏ domain về IP hosting mới
 
 <p align="center">
-  <img src="/day4/img/domain.png" alt="Chỉnh file host" width="500"/>
+  <img src="/day4/wordpress/img/domain.png" alt="Chỉnh file host" width="500"/>
 </p>
 
 ---
@@ -39,7 +39,7 @@ Trước khi cập nhật DNS thật, cần chỉnh file `hosts` trên máy tín
 Thực hiện cài đặt một trang WordPress mới trên hosting đã chuẩn bị.
 
 <p align="center">
-  <img src="/day4/img/newwordpress.png" alt="Setup WordPress mới" width="500"/>
+  <img src="/day4/wordpress/img/newwordpress.png" alt="Setup WordPress mới" width="500"/>
 </p>
 
 ---
@@ -47,7 +47,7 @@ Thực hiện cài đặt một trang WordPress mới trên hosting đã chuẩn
 ## 🔌 Bước 5: Cài plugin All-in-One WP Migration vào WordPress mới
 
 <p align="center">
-  <img src="/day4/img/installplugin.png" alt="Cài plugin" width="500"/>
+  <img src="/day4/wordpress/img/installplugin.png" alt="Cài plugin" width="500"/>
 </p>
 
 ---
@@ -57,7 +57,7 @@ Thực hiện cài đặt một trang WordPress mới trên hosting đã chuẩn
 Sử dụng plugin vừa cài để **Import lại toàn bộ dữ liệu** vào site mới.
 
 <p align="center">
-  <img src="/day4/img/importwebsite.png" alt="Import wpress" width="500"/>
+  <img src="/day4/wordpress/img/importwebsite.png" alt="Import wpress" width="500"/>
 </p>
 
 ---
@@ -67,7 +67,7 @@ Sử dụng plugin vừa cài để **Import lại toàn bộ dữ liệu** vào
 Sau khi import xong, website mới sẽ có đầy đủ giao diện, bài viết, cấu hình giống website cũ.
 
 <p align="center">
-  <img src="/day4/img/import.png" alt="Website hoạt động" width="500"/>
+  <img src="/day4/wordpress/img/import.png" alt="Website hoạt động" width="500"/>
 </p>
 
 ---
@@ -77,13 +77,13 @@ Sau khi import xong, website mới sẽ có đầy đủ giao diện, bài viế
 ### 🔹 Elementor — trình dựng giao diện kéo thả
 
 <p align="center">
-  <img src="/day4/img/elementor.png" alt="Elementor" width="300"/>
+  <img src="/day4/wordpress/img/elementor.png" alt="Elementor" width="300"/>
 </p>
 
 ### 🔹 Rank Math SEO — hỗ trợ tối ưu công cụ tìm kiếm
 
 <p align="center">
-  <img src="/day4/img/rankmathseo.png" alt="Rank Math SEO" width="300"/>
+  <img src="/day4/wordpress/img/rankmathseo.png" alt="Rank Math SEO" width="300"/>
 </p>
 
 ---
