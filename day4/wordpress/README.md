@@ -100,7 +100,20 @@ Sau khi import xong, website mới sẽ có đầy đủ giao diện, bài viế
 
 ## ⚠️ Ghi chú quan trọng về plugin tối ưu tốc độ
 
-- ✅ **WP-Optimize**: *Chỉ dùng khi hosting KHÔNG hỗ trợ LiteSpeed.*
-- ✅ **LiteSpeed Cache**: *Ưu tiên dùng nếu hosting có LiteSpeed.*
+✅ WP-Optimize
+  Dùng khi hosting không có LiteSpeed (Apache/Nginx).
+
+  Tính năng chính: Tối ưu database, xóa dữ liệu rác, cache đơn giản.
+
+  Phù hợp với website nhỏ, blog, cần dọn dẹp và cache nhẹ.
+
+✅ LiteSpeed Cache
+  Dùng khi hosting dùng LiteSpeed/OpenLiteSpeed.
+
+  Tính năng mạnh: Cache cấp máy chủ, minify, lazy load, tối ưu ảnh, hỗ trợ WooCommerce.
+
+  Tốt nhất cho website lớn, bán hàng, cần hiệu suất cao.
+
+
 - ❌ **Không nên cài cùng lúc cả hai plugin trên** để tránh xung đột.
 
