@@ -1,12 +1,12 @@
 # 🚀 Training ngày 5 tại Vietnix
 
 ### Mô hình này kết hợp apache và nginx để áp dụng 2 ưu điểm của 2 webserver, cụ thể:
-  - Nginx có hiệu năng cao nhờ kiến trúc even-driven
+  - Nginx có hiệu năng cao nhờ kiến trúc even-driven còn Apache tương thích cao với php fpm
   - Nginx có thể xử lý file tĩnh trong khi apache sẽ xử lí PHP -> giảm tải cho Apache 
   - Trong trường hợp cần scale ứng dụng theo chiều ngang thì có thể phát triển nginx thành Loadbalancer
   -> Vì vậy Nginx sẽ đứng trước Apache để làm reverse proxy
 
-  ### SSL
+### SSL
   - zero ssl cho kết nối https từ client tới reverse proxy
   - Chứng chỉ tự kí cho các kết nối https từ Nginx tới Apache
 
