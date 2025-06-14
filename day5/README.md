@@ -26,10 +26,6 @@ sudo apt install php7.4-fpm -y
 # Cài đặt các module PHP cần thiết cho WordPress
 sudo apt install php7.4-cli php7.4-common php7.4-mysql php7.4-xml php7.4-mbstring php7.4-curl php7.4-zip php7.4-bcmath -y
 ```
-<p align="center">
-  <img src="/day5/images/php7.4.png" alt="php7.4" width="500"/>
-</p>
-👍 PHP 7.4 đã sẵn sàng để chạy WordPress
 
 ### ⚙️ PHP 8.2 để chạy Laravel
 
@@ -37,20 +33,16 @@ sudo apt install php7.4-cli php7.4-common php7.4-mysql php7.4-xml php7.4-mbstrin
 # Cài đặt PHP 8.2 và PHP-FPM
 sudo apt install php8.2-fpm -y
 ```
-<p align="center">
-  <img src="/day5/images/php8.2.png" alt="php8.2" width="500"/>
-</p>
-👍 PHP 8.2 đã sẵn sàng để chạy Laravel
 
 ### 🔒 Cấu hình `open_basedir` cho PHP 8.2
 
-Thêm dòng sau vào **cuối file** `/etc/php/8.2/fpm/pool.d/www.conf` để giới hạn đường dẫn mà PHP có thể truy cập:
+Thêm dòng sau vào **cuối file** `/etc/php/8.2/fpm/pool.d/www.conf`:
 
 ```ini
 php_admin_value[open_basedir] = /var/www/laravel:/usr/share/phpmyadmin:/usr/share/php:/tmp/
 ```
 
-Sau đó restart PHP-FPM:
+Khởi động lại PHP-FPM:
 
 ```bash
 sudo systemctl restart php8.2-fpm
@@ -60,36 +52,33 @@ sudo systemctl restart php8.2-fpm
 
 ## 🐬 3. Cài đặt MariaDB
 
-### 📦 Cài đặt MariaDB
+### 🌍 Cài đặt MariaDB
 
 ```bash
 sudo apt install mariadb-server -y
 ```
-<p align="center">
-  <img src="/day5/images/mariadb.png" alt="mariadb" width="500"/>
-</p>
 
-### 🌍 Cấu hình cho phép truy cập MariaDB từ xa
+### 🌐 Cấu hình cho phép truy cập MariaDB từ xa
 
-Mở file cấu hình:
+Mở file:
 
 ```bash
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 
-Tìm dòng:
+Tìm:
 
 ```ini
 bind-address = 127.0.0.1
 ```
 
-Đổi thành:
+Thay:
 
 ```ini
 bind-address = 0.0.0.0
 ```
 
-Sau đó:
+Khởi động lại:
 
 ```bash
 sudo systemctl restart mariadb
@@ -109,8 +98,6 @@ Làm theo hướng dẫn để đổi mật khẩu root, chặn truy cập từ 
 sudo mariadb
 ```
 
-Sau đó chạy:
-
 ```sql
 -- WordPress
 CREATE DATABASE wordpress;
@@ -125,9 +112,6 @@ GRANT ALL PRIVILEGES ON laravel.* TO 'laravel_admin'@'%';
 FLUSH PRIVILEGES;
 EXIT;
 ```
-<p align="center">
-  <img src="/day5/images/database.png" alt="" width="500"/>
-</p>
 
 ## 🧮 6. Cài đặt phpMyAdmin
 
@@ -140,21 +124,16 @@ sudo apt install phpmyadmin -y
 ```bash
 sudo apt install apache2 -y
 ```
-<p align="center">
-  <img src="/day5/images/apache.png" alt="" width="500"/>
-</p>
 
-### Tạo ssl tự kí 
+### Tạo SSL tự ký
 
+```bash
+--  --  Tạo khóa riêng cho CA
 mkdir /etc/ssl/apache2
---  Tạo khóa riêng cho CA
 openssl genrsa -out myCA.key 2048
-
--- Tạo CA cert
 openssl req -x509 -new -nodes -key myCA.key -sha256 -days 3650 -out myCA.crt \
   -subj "/C=VN/ST=HN/L=/O=Phuc/CN=PhucCA"
 
---  Tạo file cấu hình SAN cho Apache
 cat <<EOF > apache.cnf
 [req]
 distinguished_name = req_distinguished_name
@@ -173,21 +152,13 @@ subjectAltName = @alt_names
 IP.1 = 127.0.0.1
 EOF
 
-Tạo khóa riêng và CSR cho Apache
 openssl genrsa -out apache.key 2048
-
 openssl req -new -key apache.key -out apache.csr -config apache.cnf
-
 openssl x509 -req -in apache.csr -CA myCA.crt -CAkey myCA.key -CAcreateserial \
   -out apache.crt -days 365 -sha256 -extensions v3_req -extfile apache.cnf
+```
 
-Sẽ có 3 file cần sử dụng trong cấu hình của apache là apache.crt , apache.key và myCA.crt
-
---- 
-
-Cấu hình VirtualHost cho phpMyAdmin, WordPress và Laravel (file config trong folder apache)
-
-Kích hoạt site:
+## Cấu hình VirtualHost cho phpMyAdmin, WordPress, Laravel
 
 ```bash
 sudo a2ensite phpmyadmin.conf
@@ -196,25 +167,22 @@ sudo a2ensite laravel.conf
 sudo systemctl restart apache2
 ```
 
-Tải mã nguồn lên từng thư mục tương ứng.
+Tải mã nguồn lên thư mục tương ứng.
 
-🔧 Cấu hình phpMyAdmin:
+### Cấu hình phpMyAdmin:
 
 ```bash
 sudo nano /etc/apache2/apache2.conf
-# Thêm dòng sau:
 Include /etc/phpmyadmin/apache.conf
 ```
 
-🔗 Tạo symbolic link:
+Tạo symbolic link:
 
 ```bash
 sudo ln -s /usr/share/phpmyadmin /var/www/wordpress/phpmyadmin
 ```
 
-📦 Cấu hình Laravel:
-
-🧹 Xoá cache:
+### Cấu hình Laravel:
 
 ```bash
 php artisan config:clear
@@ -227,17 +195,14 @@ php artisan view:clear
 ```bash
 sudo apt install nginx -y
 ```
-<p align="center">
-  <img src="/day5/images/nginx.png" alt="" width="500"/>
-</p>
 
 ## 🔁 9. Cấu hình Nginx
 
-Tạo các file trong `/etc/nginx/sites-available/`, dùng `proxy_pass` để chuyển tiếp tới Apache local. (file config trong folder nginx)
+Tạo các file trong `/etc/nginx/sites-available/`, dùng `proxy_pass` chuyển tiếp tới Apache local.
 
 Cấu hình SSL termination với ZeroSSL.
 
-🧪 Kiểm tra cấu hình:
+Kiểm tra cấu hình:
 
 ```bash
 sudo nginx -t
@@ -260,7 +225,7 @@ sudo ufw allow 22/tcp
 sudo ufw reload
 ```
 
-## 🧱 12. Cấu hình mặc định cho domain/IP lạ
+## 🧱️ 12. Cấu hình mặc định cho domain/IP lạ
 
 ### 🅰️ Apache:
 
@@ -271,6 +236,6 @@ mkdir -p /var/www/default
 echo "Default page" > /var/www/default/index.html
 ```
 
-### 🅽 Nginx:
+### 🄽 Nginx:
 
-Tạo cấu hình server mặc định trong `sites-available/default`  
+Tạo cấu hình server mặc định trong `sites-available/default`
