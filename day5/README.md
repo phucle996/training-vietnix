@@ -168,7 +168,7 @@ openssl x509 -req -in apache.csr -CA myCA.crt -CAkey myCA.key -CAcreateserial \
   -out apache.crt -days 365 -sha256 -extensions v3_req -extfile apache.cnf
 ```
 
-## Cấu hình VirtualHost cho phpMyAdmin, WordPress, Laravel
+## Cấu hình VirtualHost cho phpMyAdmin, WordPress, Laravel ( file conf trong folder apache)
 
 ```bash
 sudo a2ensite phpmyadmin.conf
@@ -208,7 +208,7 @@ sudo apt install nginx -y
 
 ## 🔁 9. Cấu hình Nginx
 
-Tạo các file trong `/etc/nginx/sites-available/`, dùng `proxy_pass` chuyển tiếp tới Apache local.
+Tạo các file trong `/etc/nginx/sites-available/`, dùng `proxy_pass` chuyển tiếp tới Apache local.( file conf trong folder nginx)
 
 Cấu hình SSL termination với ZeroSSL.
 
