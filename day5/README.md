@@ -195,6 +195,7 @@ sudo apt install nginx -y
 <p align="center">
   <img src="/day5/images/nginx.png" alt="" width="500"/>
 </p>
+
 ## 🔁 9. Cấu hình Nginx
 
 Tạo các file trong `/etc/nginx/sites-available/`, dùng `proxy_pass` để chuyển tiếp tới Apache local. (file config trong folder nginx)
