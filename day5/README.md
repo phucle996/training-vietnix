@@ -135,7 +135,7 @@ EXIT;
 sudo apt install phpmyadmin -y
 ```
 
-## 🌐 7. Cài đặt Apache làm web server
+## 🌐 7. Chạy webserver Apache
 
 ```bash
 sudo apt install apache2 -y
@@ -143,6 +143,48 @@ sudo apt install apache2 -y
 <p align="center">
   <img src="/day5/images/apache.png" alt="" width="500"/>
 </p>
+
+### Tạo ssl tự kí 
+
+mkdir /etc/ssl/apache2
+--  Tạo khóa riêng cho CA
+openssl genrsa -out myCA.key 2048
+
+-- Tạo CA cert
+openssl req -x509 -new -nodes -key myCA.key -sha256 -days 3650 -out myCA.crt \
+  -subj "/C=VN/ST=HN/L=/O=Phuc/CN=PhucCA"
+
+--  Tạo file cấu hình SAN cho Apache
+cat <<EOF > apache.cnf
+[req]
+distinguished_name = req_distinguished_name
+x509_extensions = v3_req
+prompt = no
+
+[req_distinguished_name]
+CN = 127.0.0.1
+
+[v3_req]
+keyUsage = keyEncipherment, dataEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+
+[alt_names]
+IP.1 = 127.0.0.1
+EOF
+
+Tạo khóa riêng và CSR cho Apache
+openssl genrsa -out apache.key 2048
+
+openssl req -new -key apache.key -out apache.csr -config apache.cnf
+
+openssl x509 -req -in apache.csr -CA myCA.crt -CAkey myCA.key -CAcreateserial \
+  -out apache.crt -days 365 -sha256 -extensions v3_req -extfile apache.cnf
+
+Sẽ có 3 file cần sử dụng trong cấu hình của apache là apache.crt , apache.key và myCA.crt
+
+--- 
+
 Cấu hình VirtualHost cho phpMyAdmin, WordPress và Laravel (file config trong folder apache)
 
 Kích hoạt site:
@@ -171,13 +213,6 @@ sudo ln -s /usr/share/phpmyadmin /var/www/wordpress/phpmyadmin
 ```
 
 📦 Cấu hình Laravel:
-Sửa `app/Providers/AppServiceProvider.php`, trong hàm `boot()` thêm:
-
-```php
-if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
-    URL::forceScheme('https');
-}
-```
 
 🧹 Xoá cache:
 
