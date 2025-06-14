@@ -128,12 +128,17 @@ sudo apt install apache2 -y
 ### Tạo SSL tự ký
 
 ```bash
---  --  Tạo khóa riêng cho CA
+# Tạo thư mục lưu chứng chỉ SSL cho Apache
 mkdir /etc/ssl/apache2
+
+# Tạo private key cho Certificate Authority (CA)
 openssl genrsa -out myCA.key 2048
+
+# Tạo chứng chỉ CA tự ký (self-signed), có hiệu lực trong 10 năm (3650 ngày)
 openssl req -x509 -new -nodes -key myCA.key -sha256 -days 3650 -out myCA.crt \
   -subj "/C=VN/ST=HN/L=/O=Phuc/CN=PhucCA"
 
+# Tạo file cấu hình cho việc cấp chứng chỉ SSL cho Apache
 cat <<EOF > apache.cnf
 [req]
 distinguished_name = req_distinguished_name
@@ -152,8 +157,13 @@ subjectAltName = @alt_names
 IP.1 = 127.0.0.1
 EOF
 
+# Tạo private key cho Apache
 openssl genrsa -out apache.key 2048
+
+# Tạo certificate signing request (CSR) từ khóa apache.key, dùng cấu hình trong apache.cnf
 openssl req -new -key apache.key -out apache.csr -config apache.cnf
+
+# Dùng CA đã tạo để ký CSR, tạo ra chứng chỉ SSL cho Apache, hiệu lực 1 năm (365 ngày)
 openssl x509 -req -in apache.csr -CA myCA.crt -CAkey myCA.key -CAcreateserial \
   -out apache.crt -days 365 -sha256 -extensions v3_req -extfile apache.cnf
 ```
