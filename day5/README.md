@@ -125,7 +125,7 @@ sudo apt install phpmyadmin -y
 sudo apt install apache2 -y
 ```
 
-### Tạo SSL tự ký
+### Tạo SSL tự ký (Dùng trong kết nối nội bộ từ nginx tới apache )
 
 ```bash
 # Tạo thư mục lưu chứng chỉ SSL cho Apache
