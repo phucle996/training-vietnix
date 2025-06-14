@@ -1,5 +1,11 @@
 # 🚀 Training ngày 5 tại Vietnix
 
+
+<p align="center">
+  <img src="/day5/images/erd.png" alt="" width="800"/>
+</p>
+
+
 ## 🧰 1. Cập nhật các package trên VPS
 
 Trước khi bắt đầu cài đặt, cần cập nhật tất cả các package hiện có lên phiên bản mới nhất và sửa các lỗi gói có thể xảy ra.
@@ -27,12 +33,20 @@ sudo apt install php7.4-fpm -y
 sudo apt install php7.4-cli php7.4-common php7.4-mysql php7.4-xml php7.4-mbstring php7.4-curl php7.4-zip php7.4-bcmath -y
 ```
 
+<p align="center">
+  <img src="/day5/images/php7.4.png" alt="" width="500"/>
+</p>
+
 ### ⚙️ PHP 8.2 để chạy Laravel
 
 ```bash
 # Cài đặt PHP 8.2 và PHP-FPM
 sudo apt install php8.2-fpm -y
 ```
+
+<p align="center">
+  <img src="/day5/images/php8.2.png" alt="" width="500"/>
+</p>
 
 ### 🔒 Cấu hình `open_basedir` cho PHP 8.2
 
@@ -57,6 +71,9 @@ sudo systemctl restart php8.2-fpm
 ```bash
 sudo apt install mariadb-server -y
 ```
+<p align="center">
+  <img src="/day5/images/mariadb.png" alt="" width="500"/>
+</p>
 
 ### 🌐 Cấu hình cho phép truy cập MariaDB từ xa
 
@@ -112,6 +129,10 @@ GRANT ALL PRIVILEGES ON laravel.* TO 'laravel_admin'@'%';
 FLUSH PRIVILEGES;
 EXIT;
 ```
+
+<p align="center">
+  <img src="/day5/images/database.png" alt="" width="500"/>
+</p>
 
 ## 🧮 6. Cài đặt phpMyAdmin
 
