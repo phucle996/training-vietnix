@@ -11,7 +11,7 @@
   - Chứng chỉ tự kí cho các kết nối https từ Nginx tới Apache
 
 <p align="center">
-  <img src="/day5/images/erd.png" alt="" width="700"/>
+  <img src="/day5/images/erd1.png" alt="" width="700"/>
 </p>
 
 
