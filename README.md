@@ -1,1 +1,1 @@
-training day 2 in vietnix
+training in vietnix
