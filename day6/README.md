@@ -1,109 +1,79 @@
 # 📘 Training Ngày 1 - Tuần 2
 
-## ✅ Cấu hình Firewall trên Windows
+🔐 ✅ Cấu hình Firewall trên Windows
+🔓 Allow Port và Allow IP trên Windows Firewall
+🧭 Mở Start menu, tìm kiếm: firewall
+→ Chọn Windows Defender Firewall with Advanced Security
 
-### Allow Port và Allow IP trên Windows Firewall
+<p align="center"><img src="/day6/images/pic2.png" alt="" width="400"/></p>
+📥 Chọn Inbound Rules → New Rule
+→ Chọn Port → Next
 
-1. Mở **Start menu**, tìm kiếm: `firewall`
+<p align="center"><img src="/day6/images/pic3.png" alt="" width="400"/></p>
+🔢 Chọn TCP, nhập port: 80, 443 → Next
 
- Chọn **Windows Defender Firewall with Advanced Security**
+<p align="center"><img src="/day6/images/pic4.png" alt="" width="400"/></p>
+🟢 Chọn Allow the connection → Next
 
-   <p align="center">
-  <img src="/day6/images/pic2.png" alt="" width="400"/>
-</p>
+<p align="center"><img src="/day6/images/pic5.png" alt="" width="400"/></p>
+🧩 Chọn các profile áp dụng (Domain, Private, Public) → Next
 
-3. Ở panel trái, chọn **Inbound Rules → New Rule**
-   Chọn **Port → Next**
-   
-  <p align="center">
-  <img src="/day6/images/pic3.png" alt="" width="400"/>
-</p>
+<p align="center"><img src="/day6/images/pic6.png" alt="" width="400"/></p>
+🏷️ Đặt tên rule: "allow http and https" → Finish
 
-5. Chọn **TCP**, nhập port: `80, 443` → Next
+<p align="center"><img src="/day6/images/pic7.png" alt="" width="400"/></p>
+🔁 Làm tương tự với Outbound Rule
 
-  <p align="center">
-  <img src="/day6/images/pic4.png" alt="" width="400"/>
-</p>
-
-6. Chọn **Allow the connection** → Next
-
-  <p align="center">
-  <img src="/day6/images/pic5.png" alt="" width="400"/>
-</p>
-7. Chọn các profile áp dụng (**Domain, Private, Public**) → Next
-
-  <p align="center">
-  <img src="/day6/images/pic6.png" alt="" width="400"/>
-</p>
-
-8. Đặt tên rule: `"allow http and https"` → Finish
-
-  <p align="center">
-  <img src="/day6/images/pic7.png" alt="" width="400"/>
-</p>
-
-9. Làm tương tự với outbound rule
-   
-   <p align="center">
-  <img src="/day6/images/pic8.png" alt="" width="400"/>
-</p>
-
+<p align="center"><img src="/day6/images/pic8.png" alt="" width="400"/></p>
 ---
 
 ### Block Port và Block IP trên Windows Firewall
 
-- Trong **Inbound Rules** → chọn **New Rule**
-- Chọn **Port** → Next
-- Chọn **TCP**, chọn **All local ports** → Next
-  
-     <p align="center">
-  <img src="/day6/images/pic80.png" alt="" width="400"/>
-</p>
+🛑 Block Port và Block IP trên Windows Firewall
+➕ Trong Inbound Rules → chọn New Rule
 
-- Chọn **Block the connection** → Next
-- Chọn profile áp dụng → Next
-- Đặt tên rule: `"block all port"` → Finish
+➡️ Chọn Port → Next
 
+🧱 Chọn TCP, chọn All local ports → Next
+
+<p align="center"><img src="/day6/images/pic80.png" alt="" width="400"/></p>
+⛔ Chọn Block the connection → Next
+
+🔄 Chọn profile áp dụng → Next
+
+🏷️ Đặt tên rule: "block all port" → Finish
 ---
 
 ### Chỉ cho phép IP cụ thể truy cập port
 
-- tạo rule allow port bình thường rồi tiếp đó config phần scope , chọn these ip thay vì any ip
-     <p align="center">
-  <img src="/day6/images/pic88.png" alt="" width="400"/>
-</p>
+🎯 Chỉ cho phép IP cụ thể truy cập port
+⚙️ Tạo rule allow port bình thường → vào phần Scope
+→ Chọn “These IP addresses” thay vì “Any IP”
+
+<p align="center"><img src="/day6/images/pic88.png" alt="" width="400"/></p>
 ---
 
 ## 🖥️ Cài đặt và cấu hình Webserver IIS
 
-- Cài đặt các thành phần sau:
-  - IIS (thông qua Server Manager)
-  
-       <p align="center">
-  <img src="/day6/images/pic00.png" alt="" width="400"/>
-</p>
+🖥️ Cài đặt và cấu hình Webserver IIS
+📦 Cài đặt các thành phần:
 
-  - PHP 8.2 (Thread Safe - TS) được giải nén vào thư mục C:\php\8.2
+🌐 IIS (qua Server Manager)
 
-    <p align="center">
-  <img src="/day6/images/pic01.png" alt="" width="400"/>
-</p>
-    
-  - tải và giải nén 2 file `pdo_sqlsrv`, `sqlsrv` vào thư mục chứa extension của php
-    
-     <p align="center">
-  <img src="/day6/images/pic02.png" alt="" width="400"/>
-</p>
-    
-  - SQL Server 2016 (link dưới)
-    
-     <p align="center">
-  <img src="/day6/images/pic03.png" alt="" width="400"/>
-</p>
+<p align="center"><img src="/day6/images/pic00.png" alt="" width="400"/></p>
+🐘 PHP 8.2 (TS) → C:\php\8.2
 
-### 1. Cài WordPress mặc định trên IIS + SQL Server
+<p align="center"><img src="/day6/images/pic01.png" alt="" width="400"/></p>
+📁 Thêm pdo_sqlsrv, sqlsrv vào folder ext
 
-- Cấu hình các tham số trong file `php.ini`
+<p align="center"><img src="/day6/images/pic02.png" alt="" width="400"/></p>
+🗃️ SQL Server 2016
+
+<p align="center"><img src="/day6/images/pic03.png" alt="" width="400"/></p>
+
+### 🛠️ 1. Cài WordPress mặc định trên IIS + SQL Server
+
+⚙️ Cấu hình file php.ini
 
 ```bash
 
@@ -145,43 +115,42 @@ error_reporting = E_ALL
 ;log_errors = On
 ```
 
-- Tạo database và user cho WordPress
+🧬 Tạo database và user cho WordPress
   ```bash
   db : wordpress
   user : wordpress_admin
   pass : Phuc27012004
   role : owner
   ```
-- Giải nén source WordPress vào `C:\inetpub\wwwroot\wordpress` (wordpress của projectnami)
-- Cấu hình site trên IIS
-      <p align="center">
-  <img src="/day6/images/pic90.png" alt="" width="400"/>
-</p>
- 
-- Sử dụng virtual domain trong file hosts để vào trong web 
-      <p align="center">
-  <img src="/day6/images/pic95.png" alt="" width="400"/>
-</p>
+📦 Giải nén source vào C:\inetpub\wwwroot\wordpress
+
+⚙️ Cấu hình site trên IIS
+
+<p align="center"><img src="/day6/images/pic90.png" alt="" width="400"/></p>
+🧭 Trỏ domain ảo bằng file hosts
+
+<p align="center"><img src="/day6/images/pic95.png" alt="" width="400"/></p>
+
 
 ---
 
 ### 2. Cài đặt SSL cho WordPress trên IIS
 
-- Dùng SSL từ zero ssl đã tạo từ hôm trước :
-  - Lên trang https://www.sslshopper.com/ssl-converter.html
-        <p align="center">
-  <img src="/day6/images/pic96.png" alt="" width="400"/>
-</p>
+🔐 2. Cài đặt SSL cho WordPress trên IIS
+🛡️ Dùng SSL từ ZeroSSL:
 
-  - import các file public, private, ca_bundle vào để tạo file
-        <p align="center">
-  <img src="/day6/images/pic97.png" alt="" width="400"/>
-</p>
+Truy cập: sslshopper.com
 
-- Gắn SSL vào IIS qua mục **Bindings → HTTPS**
-        <p align="center">
-  <img src="/day6/images/pic98.png" alt="" width="400"/>
-</p>
+<p align="center"><img src="/day6/images/pic96.png" alt="" width="400"/></p>
+Import file public, private, ca_bundle để tạo .pfx
+
+<p align="center"><img src="/day6/images/pic97.png" alt="" width="400"/></p>
+🔗 Thêm SSL vào IIS → Bindings → HTTPS
+
+<p align="center"><img src="/day6/images/pic98.png" alt="" width="400"/></p>
+🌐 Truy cập site qua HTTPS
+
+<p align="center"><img src="/day6/images/pic65.png" alt="" width="400"/></p>
 ---
 
 ## 🗃️ SQL Server 2016
