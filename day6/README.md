@@ -52,12 +52,12 @@
 
 ### Block Port và Block IP trên Windows Firewall
 
-1. Trong **Inbound Rules** → chọn **New Rule**
-2. Chọn **Port** → Next
-3. Chọn **TCP**, chọn **All local ports** → Next
-4. Chọn **Block the connection** → Next
-5. Chọn profile áp dụng → Next
-6. Đặt tên rule: `"block all port"` → Finish
+- Trong **Inbound Rules** → chọn **New Rule**
+- Chọn **Port** → Next
+- Chọn **TCP**, chọn **All local ports** → Next
+7. Chọn **Block the connection** → Next
+8. Chọn profile áp dụng → Next
+9. Đặt tên rule: `"block all port"` → Finish
 
 ---
 
@@ -77,23 +77,92 @@
 
 - Cài đặt các thành phần sau:
   - IIS (thông qua Server Manager)
-  - PHP 8.2 (Thread Safe - TS)
-  - MySQL driver: `pdo_sqlsrv`, `sqlsrv`
+  
+       <p align="center">
+  <img src="/day6/images/pic00.png" alt="" width="400"/>
+</p>
+
+  - PHP 8.2 (Thread Safe - TS) được giải nén vào thư mục C:\php\8.2
+
+    <p align="center">
+  <img src="/day6/images/pic01.png" alt="" width="400"/>
+</p>
+    
+  - tải và giải nén 2 file `pdo_sqlsrv`, `sqlsrv` vào thư mục chứa extension của php
+    
+     <p align="center">
+  <img src="/day6/images/pic02.png" alt="" width="400"/>
+</p>
+    
   - SQL Server 2016 (link dưới)
+    
+     <p align="center">
+  <img src="/day6/images/pic03.png" alt="" width="400"/>
+</p>
 
 ### 1. Cài WordPress mặc định trên IIS + SQL Server
 
-1. Tải PHP 8.2 TS từ
-2. Giải nén vào `C:\php` và cấu hình `php.ini`
-3. Cài các extension:
-   - `pdo_sqlsrv.dll`
-   - `sqlsrv.dll`
-4. Cài SQL Server 2016
-5. Tạo database và user cho WordPress
-6. Giải nén source WordPress vào `C:\inetpub\wwwroot\wordpress`
-7. Cấu hình site trên IIS
-8. Sử dụng virtual domain cho trang web
-9. Truy cập `http://wp.phuc.vietnix.tech` để cài đặt
+- Cấu hình các tham số trong file `php.ini`
+
+```bash
+
+; Đường dẫn extension
+extension_dir = "ext"
+
+; Bật các extension cần thiết
+extension=mysqli
+extension=pdo_mysql
+extension=curl
+extension=mbstring
+extension=openssl
+extension=xml
+extension=zip
+extension=gd
+extension=intl
+extension=soap
+extension=fileinfo
+extension=exif
+extension=pdo_sqlsrv
+extension=sqlsrv
+
+; Cấu hình timezone
+; (Giúp tránh lỗi cảnh báo liên quan đến ngày giờ)
+date.timezone = Asia/Ho_Chi_Minh
+
+; Giới hạn upload và hiệu suất
+upload_max_filesize = 64M
+post_max_size = 64M
+max_execution_time = 300
+memory_limit = 256M
+
+; Hiển thị lỗi (chỉ nên bật khi phát triển)
+display_errors = On
+error_reporting = E_ALL
+
+; Nếu là môi trường production:
+;display_errors = Off
+;log_errors = On
+```
+
+- Tạo database và user cho WordPress
+  ```bash
+  db : wordpress
+  user : wordpress_admin
+  pass : Phuc27012004
+  role : owner
+  ```
+- Giải nén source WordPress vào `C:\inetpub\wwwroot\wordpress` (wordpress của projectnami)
+- Cấu hình site trên IIS
+
+      <p align="center">
+  <img src="/day6/images/pic90.png" alt="" width="400"/>
+</p>
+ 
+- Sử dụng virtual domain trong file hosts để vào trong web 
+
+      <p align="center">
+  <img src="/day6/images/pic95.png" alt="" width="400"/>
+</p>
 
 ---
 
@@ -101,9 +170,22 @@
 
 - Dùng SSL từ zero ssl đã tạo từ hôm trước :
   - Lên trang https://www.sslshopper.com/ssl-converter.html
+
+        <p align="center">
+  <img src="/day6/images/pic96.png" alt="" width="400"/>
+</p>
+
   - import các file public, private, ca_bundle vào để tạo file
+
+        <p align="center">
+  <img src="/day6/images/pic97.png" alt="" width="400"/>
+</p>
+
 - Gắn SSL vào IIS qua mục **Bindings → HTTPS**
 
+        <p align="center">
+  <img src="/day6/images/pic98.png" alt="" width="400"/>
+</p>
 ---
 
 ## 🗃️ SQL Server 2016
