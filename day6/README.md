@@ -6,11 +6,7 @@
 
 1. Mở **Start menu**, tìm kiếm: `firewall`
 
-   <p align="center">
-  <img src="/day6/images/pic1.png" alt="" width="400"/>
-</p>
-
-2. Chọn **Windows Defender Firewall with Advanced Security**
+ Chọn **Windows Defender Firewall with Advanced Security**
 
    <p align="center">
   <img src="/day6/images/pic2.png" alt="" width="400"/>
