@@ -1,8 +1,11 @@
 # 📘 Training Ngày 1 - Tuần 2
 
 🔐 ✅ Cấu hình Firewall trên Windows
+
 🔓 Allow Port và Allow IP trên Windows Firewall
+
 🧭 Mở Start menu, tìm kiếm: firewall
+
 → Chọn Windows Defender Firewall with Advanced Security
 
 <p align="center"><img src="/day6/images/pic2.png" alt="" width="400"/></p>
