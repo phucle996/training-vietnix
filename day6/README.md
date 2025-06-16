@@ -5,13 +5,57 @@
 ### Allow Port và Allow IP trên Windows Firewall
 
 1. Mở **Start menu**, tìm kiếm: `firewall`
+
+   <p align="center">
+  <img src="/day6/images/pic1.png" alt="" width="400"/>
+</p>
+
 2. Chọn **Windows Defender Firewall with Advanced Security**
+
+   <p align="center">
+  <img src="/day6/images/pic2.png" alt="" width="400"/>
+</p>
+
 3. Ở panel trái, chọn **Inbound Rules → New Rule**
+
+  <p align="center">
+  <img src="/day6/images/pic3.png" alt="" width="400"/>
+</p>
+
 4. Chọn **Port → Next**
+
+  <p align="center">
+  <img src="/day6/images/pic4.png" alt="" width="400"/>
+</p>
+
 5. Chọn **TCP**, nhập port: `80, 443` → Next
+
+  <p align="center">
+  <img src="/day6/images/pic5.png" alt="" width="400"/>
+</p>
+
 6. Chọn **Allow the connection** → Next
+
+  <p align="center">
+  <img src="/day6/images/pic6.png" alt="" width="400"/>
+</p>
 7. Chọn các profile áp dụng (**Domain, Private, Public**) → Next
+
+  <p align="center">
+  <img src="/day6/images/pic7.png" alt="" width="400"/>
+</p>
+
 8. Đặt tên rule: `"allow http and https"` → Finish
+
+  <p align="center">
+  <img src="/day6/images/pic8.png" alt="" width="400"/>
+</p>
+
+9. Làm tương tự với outbound rule
+   
+   <p align="center">
+  <img src="/day6/images/pic9.png" alt="" width="400"/>
+</p>
 
 ---
 
@@ -66,7 +110,7 @@
 
 - Dùng SSL từ zero ssl đã tạo từ hôm trước :
   - Lên trang https://www.sslshopper.com/ssl-converter.html
-  - import các file hôm 
+  - import các file public, private, ca_bundle vào để tạo file
 - Gắn SSL vào IIS qua mục **Bindings → HTTPS**
 
 ---
