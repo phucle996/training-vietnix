@@ -154,13 +154,11 @@ error_reporting = E_ALL
   ```
 - Giải nén source WordPress vào `C:\inetpub\wwwroot\wordpress` (wordpress của projectnami)
 - Cấu hình site trên IIS
-
       <p align="center">
   <img src="/day6/images/pic90.png" alt="" width="400"/>
 </p>
  
 - Sử dụng virtual domain trong file hosts để vào trong web 
-
       <p align="center">
   <img src="/day6/images/pic95.png" alt="" width="400"/>
 </p>
@@ -171,19 +169,16 @@ error_reporting = E_ALL
 
 - Dùng SSL từ zero ssl đã tạo từ hôm trước :
   - Lên trang https://www.sslshopper.com/ssl-converter.html
-
         <p align="center">
   <img src="/day6/images/pic96.png" alt="" width="400"/>
 </p>
 
   - import các file public, private, ca_bundle vào để tạo file
-
         <p align="center">
   <img src="/day6/images/pic97.png" alt="" width="400"/>
 </p>
 
 - Gắn SSL vào IIS qua mục **Bindings → HTTPS**
-
         <p align="center">
   <img src="/day6/images/pic98.png" alt="" width="400"/>
 </p>
