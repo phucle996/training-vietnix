@@ -55,9 +55,11 @@
 - Trong **Inbound Rules** → chọn **New Rule**
 - Chọn **Port** → Next
 - Chọn **TCP**, chọn **All local ports** → Next
+  
      <p align="center">
   <img src="/day6/images/pic80.png" alt="" width="400"/>
 </p>
+
 - Chọn **Block the connection** → Next
 - Chọn profile áp dụng → Next
 - Đặt tên rule: `"block all port"` → Finish
@@ -66,7 +68,7 @@
 
 ### Chỉ cho phép IP cụ thể truy cập port
 
-- tạo rule allow port bình thường rồi tiếp đó config phần scope , chọn these ip thay vì all ip
+- tạo rule allow port bình thường rồi tiếp đó config phần scope , chọn these ip thay vì any ip
      <p align="center">
   <img src="/day6/images/pic88.png" alt="" width="400"/>
 </p>
