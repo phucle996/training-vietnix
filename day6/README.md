@@ -13,44 +13,39 @@
 </p>
 
 3. Ở panel trái, chọn **Inbound Rules → New Rule**
-
+   Chọn **Port → Next**
+   
   <p align="center">
   <img src="/day6/images/pic3.png" alt="" width="400"/>
-</p>
-
-4. Chọn **Port → Next**
-
-  <p align="center">
-  <img src="/day6/images/pic4.png" alt="" width="400"/>
 </p>
 
 5. Chọn **TCP**, nhập port: `80, 443` → Next
 
   <p align="center">
-  <img src="/day6/images/pic5.png" alt="" width="400"/>
+  <img src="/day6/images/pic4.png" alt="" width="400"/>
 </p>
 
 6. Chọn **Allow the connection** → Next
 
   <p align="center">
-  <img src="/day6/images/pic6.png" alt="" width="400"/>
+  <img src="/day6/images/pic5.png" alt="" width="400"/>
 </p>
 7. Chọn các profile áp dụng (**Domain, Private, Public**) → Next
 
   <p align="center">
-  <img src="/day6/images/pic7.png" alt="" width="400"/>
+  <img src="/day6/images/pic6.png" alt="" width="400"/>
 </p>
 
 8. Đặt tên rule: `"allow http and https"` → Finish
 
   <p align="center">
-  <img src="/day6/images/pic8.png" alt="" width="400"/>
+  <img src="/day6/images/pic7.png" alt="" width="400"/>
 </p>
 
 9. Làm tương tự với outbound rule
    
    <p align="center">
-  <img src="/day6/images/pic9.png" alt="" width="400"/>
+  <img src="/day6/images/pic8.png" alt="" width="400"/>
 </p>
 
 ---
