@@ -1,45 +1,76 @@
-# Training ngày 1 tuần 2 
+# 📘 Training Ngày 1 - Tuần 2
 
-## Thực hiện allow port, allow ip trên window fw
+## ✅ Cấu hình Firewall trên Windows
 
-Search "firewall" trong start rồi vào Windows Firewall with Advanced Security
+### Allow Port và Allow IP trên Windows Firewall
 
-Chọn Inbound Rules → New Rule
+1. Mở **Start menu**, tìm kiếm: `firewall`
+2. Chọn **Windows Defender Firewall with Advanced Security**
+3. Ở panel trái, chọn **Inbound Rules → New Rule**
+4. Chọn **Port → Next**
+5. Chọn **TCP**, nhập port: `80, 443` → Next
+6. Chọn **Allow the connection** → Next
+7. Chọn các profile áp dụng (**Domain, Private, Public**) → Next
+8. Đặt tên rule: `"allow http and https"` → Finish
 
-Chọn Port → Next
+---
 
-Chọn TCP → nhập port 80 và 443
+### Block Port và Block IP trên Windows Firewall
 
-Chọn Allow the connection → Next
+1. Trong **Inbound Rules** → chọn **New Rule**
+2. Chọn **Port** → Next
+3. Chọn **TCP**, chọn **All local ports** → Next
+4. Chọn **Block the connection** → Next
+5. Chọn profile áp dụng → Next
+6. Đặt tên rule: `"block all port"` → Finish
 
-Chọn profile áp dụng (Domain, Private, Public) → Next
+---
 
-Đặt tên rule "allow http and https" → Finish
+### Chỉ cho phép IP cụ thể truy cập port
 
+1. Trong **Inbound Rules** → chọn rule muốn giới hạn
+2. Click phải → **Properties**
+3. Vào tab **Scope**
+4. Ở phần **Remote IP address**, chọn:
+   - **These IP addresses**
+   - Thêm địa chỉ IP bạn muốn cho phép
+5. OK để lưu
 
-## Thực hiện block port, block ip trên window fw
+---
 
-Chọn Inbound Rules → New Rule
+## 🖥️ Cài đặt và cấu hình Webserver IIS
 
-Chọn Port → Next
+- Cài đặt các thành phần sau:
+  - IIS (thông qua Server Manager)
+  - PHP 8.2 (Thread Safe - TS)
+  - MySQL driver: `pdo_sqlsrv`, `sqlsrv`
+  - SQL Server 2016 (link dưới)
 
-Chọn TCP → all
+### 1. Cài WordPress mặc định trên IIS + SQL Server
 
-Chọn Allow the connection → Next
+1. Tải PHP 8.2 TS từ
+2. Giải nén vào `C:\php` và cấu hình `php.ini`
+3. Cài các extension:
+   - `pdo_sqlsrv.dll`
+   - `sqlsrv.dll`
+4. Cài SQL Server 2016
+5. Tạo database và user cho WordPress
+6. Giải nén source WordPress vào `C:\inetpub\wwwroot\wordpress`
+7. Cấu hình site trên IIS
+8. Sử dụng virtual domain cho trang web
+9. Truy cập `http://wp.phuc.vietnix.tech` để cài đặt
 
-Chọn profile áp dụng (Domain, Private, Public) → Next
+---
 
-Đặt tên rule "block all port" → Finish
+### 2. Cài đặt SSL cho WordPress trên IIS
 
-- Thực hiện giới hạn port, giới hạn ip trên window fw chỉ cho phép ip chỉ định truy cập
+- Dùng SSL từ zero ssl đã tạo từ hôm trước :
+  - Lên trang https://www.sslshopper.com/ssl-converter.html
+  - import các file hôm 
+- Gắn SSL vào IIS qua mục **Bindings → HTTPS**
 
-- Thực hành cài đặt 
+---
 
-- Webserver IIS, trên Webserver IIS
+## 🗃️ SQL Server 2016
 
-  + Cài đặt website wordpress mặc định + mysql
-
-  + Cài đặt SSL
-
-- SQL Server: 2016 
-Link download: https://software.vietnix.tech/datastore/sources/SQL_Server/sql2016/
+- Link tải: [https://software.vietnix.tech/datastore/sources/SQL_Server/sql2016/](https://software.vietnix.tech/datastore/sources/SQL_Server/sql2016/)
