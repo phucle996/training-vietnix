@@ -55,22 +55,21 @@
 - Trong **Inbound Rules** → chọn **New Rule**
 - Chọn **Port** → Next
 - Chọn **TCP**, chọn **All local ports** → Next
-7. Chọn **Block the connection** → Next
-8. Chọn profile áp dụng → Next
-9. Đặt tên rule: `"block all port"` → Finish
+     <p align="center">
+  <img src="/day6/images/pic80.png" alt="" width="400"/>
+</p>
+- Chọn **Block the connection** → Next
+- Chọn profile áp dụng → Next
+- Đặt tên rule: `"block all port"` → Finish
 
 ---
 
 ### Chỉ cho phép IP cụ thể truy cập port
 
-1. Trong **Inbound Rules** → chọn rule muốn giới hạn
-2. Click phải → **Properties**
-3. Vào tab **Scope**
-4. Ở phần **Remote IP address**, chọn:
-   - **These IP addresses**
-   - Thêm địa chỉ IP bạn muốn cho phép
-5. OK để lưu
-
+- tạo rule allow port bình thường rồi tiếp đó config phần scope , chọn these ip thay vì all ip
+     <p align="center">
+  <img src="/day6/images/pic88.png" alt="" width="400"/>
+</p>
 ---
 
 ## 🖥️ Cài đặt và cấu hình Webserver IIS
