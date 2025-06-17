@@ -33,3 +33,42 @@ sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/
 - Watchdog (default Yes):
   <p align="left"><img src="/day7/images/day7-8.png" alt="" width="400"/></p>
 
+ - Khoảng 15 phút sau :
+  
+  ```bash
+  
+###################################################################
+                CyberPanel Successfully Installed                  
+                                                                   
+                Current Disk usage : 8/50GB (17%)                        
+                                                                   
+                Current RAM  usage : 1232/7685MB (16.03%)                         
+                                                                   
+                Installation time  : 0 hrs 18 min 0 sec                 
+                                                                   
+                Visit: https://14.225.254.47:8090                     
+                Panel username: admin                              
+                Panel password: vXwyIQQXFePw7CN1                        
+                                                                   
+             Run cyberpanel help to get FAQ info
+             Run cyberpanel upgrade to upgrade it to latest version.
+             Run cyberpanel utility to access some handy tools .
+                                                                   
+              Website : https://www.cyberpanel.net                 
+              Forums  : https://forums.cyberpanel.net              
+              Wikipage: https://docs.cyberpanel.net                
+              Docs    : https://cyberpanel.net/docs/               
+                                                                   
+            Enjoy your accelerated Internet by                  
+                CyberPanel & OpenLiteSpeed 				                     
+###################################################################
+
+```
+- Lên web login vào
+    <p align="left"><img src="/day7/images/day7-10.png" alt="" width="400"/></p>
+    
+  ## Up source code wordpress up lên hosting cyber panel
+
+  - Tạo 1 trang web trong cyber panel
+  <p align="left"><img src="/day7/images/day7-11.png" alt="" width="400"/></p>
+
