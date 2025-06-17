@@ -142,7 +142,7 @@ error_reporting = E_ALL
 🔐 2. Cài đặt SSL cho WordPress trên IIS
 🛡️ Dùng SSL từ ZeroSSL:
 
-Truy cập: sslshopper.com
+Truy cập: [sslshopper.com](https://www.sslshopper.com/ssl-converter.html)
 
 <p align="center"><img src="/day6/images/pic96.png" alt="" width="400"/></p>
 Import file public, private, ca_bundle để tạo .pfx
