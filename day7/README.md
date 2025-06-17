@@ -27,30 +27,30 @@ sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/
 Khi cài đặt CyberPanel, bạn sẽ được yêu cầu chọn các tuỳ chọn sau:
 
 - **Cài đặt CyberPanel**: Chọn `y` để cài đặt.
-  ![Install CyberPanel](day7/images/day7-1.png) 📥
+  ![Install CyberPanel](/day7/images/day7-1.png) 📥
 
 - **Cài đặt với OpenLiteSpeed**: Chọn `y`.
-  ![OpenLiteSpeed](day7/images/day7-2.png) ⚡
+  ![OpenLiteSpeed](/day7/images/day7-2.png) ⚡
 
 - **Full Service**: Chọn `y` (mặc định).
-  ![Full Service](day7/images/day7-3.png) 💻
+  ![Full Service](/day7/images/day7-3.png) 💻
 
 - **Remote MySQL**: Chọn `n` (mặc định).
-  ![Remote MySQL](day7/images/day7-4.png) 🗄️
+  ![Remote MySQL](/day7/images/day7-4.png) 🗄️
 
 - **Chọn Phiên bản CyberPanel**: Chọn `Latest Version` (mặc định).
-  ![CyberPanel Version](day7/images/day7-5.png) 🔖
+  ![CyberPanel Version](/day7/images/day7-5.png) 🔖
 
 - **Cấu hình mật khẩu**: Đặt mật khẩu cho tài khoản `admin` (mặc định là “1234567”).
 
 - **Memcached**: Chọn `y` (mặc định).
-  ![Memcached](day7/images/day7-6.png) 🧑‍💻
+  ![Memcached](/day7/images/day7-6.png) 🧑‍💻
 
 - **Redis**: Chọn `y` (mặc định).
-  ![Redis](day7/images/day7-7.png) 🗃️
+  ![Redis](/day7/images/day7-7.png) 🗃️
 
 - **Watchdog**: Chọn `y` (mặc định).
-  ![Watchdog](day7/images/day7-8.png) 🐶
+  ![Watchdog](/day7/images/day7-8.png) 🐶
 
 Sau khoảng 15 phút, quá trình cài đặt sẽ hoàn tất và bạn sẽ nhận được thông báo thành công:
 
@@ -92,30 +92,30 @@ Sau khoảng 15 phút, quá trình cài đặt sẽ hoàn tất và bạn sẽ n
 
 Truy cập vào CyberPanel và tạo một trang web mới.
 
-![Tạo trang web](day7/images/day7-11.png) ➕
+![Tạo trang web](/day7/images/day7-11.png) ➕
 
 ### 2. Quản Lý Trang Web và Lấy SSL
 
 - Truy cập vào **File Manager** để tải lên mã nguồn WordPress.
 
-![File Manager](day7/images/day7-12.png) 📂
+![File Manager](/day7/images/day7-12.png) 📂
 
 ### 3. Upload Mã Nguồn và Giải Nén
 
 - Upload mã nguồn WordPress và giải nén tệp lên hosting.
 
-![Upload và Giải nén](day7/images/day7-14.png) 📤
+![Upload và Giải nén](/day7/images/day7-14.png) 📤
 
 ### 4. Cấu Hình PHP
 
 - Cập nhật tham số `upload_max_filesize` và `post_max_size` trong PHP lên 10MB để hỗ trợ việc upload tệp lớn.
-  ![Cấu hình PHP](day7/images/day7-15.png) ⚙️
+  ![Cấu hình PHP](/day7/images/day7-15.png) ⚙️
 
 ### 5. Import Database Thông Qua PHPMyAdmin
 
 - Truy cập vào **PHPMyAdmin** và import cơ sở dữ liệu WordPress.
 
-![Import Database](day7/images/day7-16.png) 🗄️
+![Import Database](/day7/images/day7-16.png) 🗄️
 
 ## III. Up Source Code Laravel lên Hosting CyberPanel
 
@@ -123,7 +123,7 @@ Truy cập vào CyberPanel và tạo một trang web mới.
 
 Tạo một trang web mới với PHP 8.2 (Laravel yêu cầu PHP 8.0 trở lên).
 
-![Tạo trang web PHP 8.2](day7/images/day7-17.png) 📑
+![Tạo trang web PHP 8.2](/day7/images/day7-17.png) 📑
 
 ### 2. Upload Mã Nguồn Laravel và Import Database
 
@@ -152,7 +152,7 @@ Cấu hình **Vhost** cho Laravel trong phần **Manage Website**:
 docRoot                   $VH_ROOT/public
 ```
 
-![Cấu hình Vhost](day7/images/day7-22.png) 🖥️
+![Cấu hình Vhost](/day7/images/day7-22.png) 🖥️
 
 ---
 
