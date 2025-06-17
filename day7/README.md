@@ -25,29 +25,37 @@ sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/
 Khi cài đặt CyberPanel, sẽ phải chọn các option sau:
 
  📥 **Cài đặt CyberPanel**: Chọn `y` để cài đặt.
+ 
   <img src="images/day7-1.png" width="400" alt="Install CyberPanel" />
 
  ⚡ **Cài đặt với OpenLiteSpeed**: Chọn `y`.
+ 
   <img src="images/day7-2.png" width="400" alt="OpenLiteSpeed" />
 
  💻 **Full Service**: Chọn `y` (mặc định).
+ 
   <img src="images/day7-3.png" width="400" alt="Full Service" />
 
  🗄️ **Remote MySQL**: Chọn `n` (mặc định).
+ 
   <img src="images/day7-4.png" width="400" alt="Remote MySQL" />
 
  🔖 **Chọn Phiên bản CyberPanel**: Chọn `Latest Version` (mặc định).
+ 
   <img src="images/day7-5.png" width="400" alt="CyberPanel Version" />
 
  🔑 **Cấu hình mật khẩu**: Đặt mật khẩu cho tài khoản `admin` (mặc định là “1234567”).
 
  🧑‍💻 **Memcached**: Chọn `y` (mặc định).
+ 
   <img src="images/day7-6.png" width="400" alt="Memcached" />
 
  🗃️ **Redis**: Chọn `y` (mặc định).
+ 
   <img src="images/day7-7.png" width="400" alt="Redis" />
 
  🐶 **Watchdog**: Chọn `y` (mặc định).
+ 
   <img src="images/day7-8.png" width="400" alt="Watchdog" />
 
 🖥️ Sau khoảng 15 phút, quá trình cài đặt sẽ hoàn tất và sẽ nhận được thông báo thành công:
