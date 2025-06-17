@@ -2,10 +2,12 @@
 
 ## Cài đặt Cyber panel :
   ### Update các pakage
-    ```bash 
-sudo yum check-update
-sudo yum update
+```bash 
+  sudo yum check-update
+  sudo yum update
+
 ```
+
 ### Cài Cyber panel với lệnh:
 
 ```bash
