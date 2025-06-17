@@ -67,17 +67,40 @@ sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/
 - Lên web login vào
     <p align="left"><img src="/day7/images/day7-10.png" alt="" width="400"/></p>
     
-  ## Up source code wordpress up lên hosting cyber panel
+  ## Up source code wordpress lên hosting cyber panel
 
   - Tạo 1 trang web trong cyber panel
     <p align="left"><img src="/day7/images/day7-11.png" alt="" width="400"/></p>
 
-  - Vào quản lí trang web -> file manager
+  - Vào quản lí trang web (nhân tiện lấy luôn ssl )-> file manager
      <p align="left"><img src="/day7/images/day7-12.png" alt="" width="400"/></p>
 
   - Tiến hành upload source code và giải nén
      <p align="left"><img src="/day7/images/day7-14.png" alt="" width="400"/></p>
 
+  - Đưa tham số **upload_max_filesize** và **post_max_size** lên 10MB của php 8.0 ( đây là version php chạy phpmyadmin)
+         <p align="left"><img src="/day7/images/day7-15.png" alt="" width="400"/></p>
   - Import database thông qua PHPmyadmin
- 
-  - 
+      <p align="left"><img src="/day7/images/day7-16.png" alt="" width="400"/></p>
+  
+  ## Up source code laravel lên hosting cyber panel
+
+  - Tạo 1 trang web với php 8.2
+     <p align="left"><img src="/day7/images/day7-17.png" alt="" width="400"/></p>
+
+  - Cũng tương tự như wordpress : upload mã nguồn vào file manager import sql thông qua phpmyadmin
+  - Tuy nhiên sẽ cần sửa file **.env**
+    ```bash
+    DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=lara_laravel
+DB_USERNAME=lara_admin
+DB_PASSWORD=Phuc27012004
+```
+
+  - Sửa Vhost trong phần manage trang web :
+```bash 
+docRoot                   $VH_ROOT/public
+```
+     <p align="left"><img src="/day7/images/day7-22.png" alt="" width="400"/></p>
