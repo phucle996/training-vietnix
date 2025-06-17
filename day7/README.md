@@ -25,7 +25,7 @@ sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/
   <p align="left"><img src="/day7/images/day7-3.png" alt="" width="400"/></p>
 - Remote MySQL (default N): n
   <p align="left"><img src="/day7/images/day7-4.png" alt="" width="400"/></p>
-- CyberPanel Version (default Latest Version): 2.0.1
+- CyberPanel Version (default Latest Version):
   <p align="left"><img src="/day7/images/day7-5.png" alt="" width="400"/></p>
 - Password (default “1234567”):
 - Memcached (default Y): y
