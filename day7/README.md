@@ -70,5 +70,14 @@ sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/
   ## Up source code wordpress up lên hosting cyber panel
 
   - Tạo 1 trang web trong cyber panel
-  <p align="left"><img src="/day7/images/day7-11.png" alt="" width="400"/></p>
+    <p align="left"><img src="/day7/images/day7-11.png" alt="" width="400"/></p>
 
+  - Vào quản lí trang web -> file manager
+     <p align="left"><img src="/day7/images/day7-12.png" alt="" width="400"/></p>
+
+  - Tiến hành upload source code và giải nén
+     <p align="left"><img src="/day7/images/day7-14.png" alt="" width="400"/></p>
+
+  - Import database thông qua PHPmyadmin
+ 
+  - 
