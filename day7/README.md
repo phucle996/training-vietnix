@@ -7,14 +7,12 @@
   sudo yum update
 
 ```
-<p align="left"><img src="/day7/images/day2.png" alt="" width="400"/></p>
 
 ### Cài Cyber panel với lệnh:
 
 ```bash
 sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)
 ```
-<p align="left"><img src="/day7/images/day2.png" alt="" width="400"/></p>
 
 ### các option khi cài đặt :
 - Install Cyber panel
