@@ -1,13 +1,11 @@
 
-# Hướng Dẫn Cài Đặt WordPress và Laravel trên CyberPanel
+# Cài Đặt WordPress và Laravel trên CyberPanel
 
 ## I. Cài Đặt CyberPanel
 
 ### 1. Cập nhật các gói cài đặt
 
-Trước khi cài đặt CyberPanel, bạn cần cập nhật các gói phần mềm trên hệ thống.
-
-🔄
+🔄 Trước khi cài đặt CyberPanel, bạn cần cập nhật các gói phần mềm trên hệ thống.
 
 ```bash
 sudo yum check-update
@@ -16,9 +14,7 @@ sudo yum update
 
 ### 2. Cài Đặt CyberPanel
 
-Chạy lệnh sau để cài đặt CyberPanel:
-
-⚙️
+⚙️ Chạy lệnh sau để cài đặt CyberPanel:
 
 ```bash
 sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh)
@@ -26,37 +22,35 @@ sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/
 
 ### 3. Các Tuỳ Chọn khi Cài Đặt
 
-Khi cài đặt CyberPanel, bạn sẽ được yêu cầu chọn các tuỳ chọn sau:
+Khi cài đặt CyberPanel, sẽ phải chọn các option sau:
 
-- 📥 **Cài đặt CyberPanel**: Chọn `y` để cài đặt.
+ 📥 **Cài đặt CyberPanel**: Chọn `y` để cài đặt.
   <img src="images/day7-1.png" width="400" alt="Install CyberPanel" />
 
-- ⚡ **Cài đặt với OpenLiteSpeed**: Chọn `y`.
+ ⚡ **Cài đặt với OpenLiteSpeed**: Chọn `y`.
   <img src="images/day7-2.png" width="400" alt="OpenLiteSpeed" />
 
-- 💻 **Full Service**: Chọn `y` (mặc định).
+ 💻 **Full Service**: Chọn `y` (mặc định).
   <img src="images/day7-3.png" width="400" alt="Full Service" />
 
-- 🗄️ **Remote MySQL**: Chọn `n` (mặc định).
+ 🗄️ **Remote MySQL**: Chọn `n` (mặc định).
   <img src="images/day7-4.png" width="400" alt="Remote MySQL" />
 
-- 🔖 **Chọn Phiên bản CyberPanel**: Chọn `Latest Version` (mặc định).
+ 🔖 **Chọn Phiên bản CyberPanel**: Chọn `Latest Version` (mặc định).
   <img src="images/day7-5.png" width="400" alt="CyberPanel Version" />
 
-- 🔑 **Cấu hình mật khẩu**: Đặt mật khẩu cho tài khoản `admin` (mặc định là “1234567”).
+ 🔑 **Cấu hình mật khẩu**: Đặt mật khẩu cho tài khoản `admin` (mặc định là “1234567”).
 
-- 🧑‍💻 **Memcached**: Chọn `y` (mặc định).
+ 🧑‍💻 **Memcached**: Chọn `y` (mặc định).
   <img src="images/day7-6.png" width="400" alt="Memcached" />
 
-- 🗃️ **Redis**: Chọn `y` (mặc định).
+ 🗃️ **Redis**: Chọn `y` (mặc định).
   <img src="images/day7-7.png" width="400" alt="Redis" />
 
-- 🐶 **Watchdog**: Chọn `y` (mặc định).
+ 🐶 **Watchdog**: Chọn `y` (mặc định).
   <img src="images/day7-8.png" width="400" alt="Watchdog" />
 
-Sau khoảng 15 phút, quá trình cài đặt sẽ hoàn tất và bạn sẽ nhận được thông báo thành công:
-
-🖥️
+🖥️ Sau khoảng 15 phút, quá trình cài đặt sẽ hoàn tất và sẽ nhận được thông báo thành công:
 
 ```bash
 ###################################################################
@@ -86,52 +80,47 @@ Sau khoảng 15 phút, quá trình cài đặt sẽ hoàn tất và bạn sẽ n
 ###################################################################
 ```
 
-- 🔑 Truy cập trang quản trị: `https://14.225.254.47:8090`
-  Đăng nhập với tài khoản `admin` và mật khẩu đã cài đặt.
+ 🔑 Truy cập trang quản trị: `https://14.225.254.47:8090`
+  Đăng nhập với tài khoản `admin` và mật khẩu.
 
 ## II. Up Source Code WordPress lên Hosting CyberPanel
 
 ### 1. Tạo Một Trang Web Trong CyberPanel
 
-Truy cập vào CyberPanel và tạo một trang web mới.
+➕ Truy cập vào CyberPanel và tạo một trang web mới.
 
-➕
 <img src="images/day7-11.png" width="400" alt="Create Website" />
 
 ### 2. Quản Lý Trang Web và Lấy SSL
 
-- Truy cập vào **File Manager** để tải lên mã nguồn WordPress.
+📂 Truy cập vào **File Manager** để tải lên mã nguồn WordPress.
 
-📂
 <img src="images/day7-12.png" width="400" alt="File Manager" />
 
 ### 3. Upload Mã Nguồn và Giải Nén
 
-- Upload mã nguồn WordPress và giải nén tệp lên hosting.
+📤 Upload mã nguồn WordPress và giải nén tệp lên hosting.
 
-📤
 <img src="images/day7-14.png" width="400" alt="Upload and Extract" />
 
 ### 4. Cấu Hình PHP
 
-- Cập nhật tham số `upload_max_filesize` và `post_max_size` trong PHP lên 10MB để hỗ trợ việc upload tệp lớn.
-  ⚙️
+⚙️ Cập nhật tham số `upload_max_filesize` và `post_max_size` trong PHP lên 10MB để hỗ trợ việc upload tệp lớn.
+  
   <img src="images/day7-15.png" width="400" alt="PHP Configuration" />
 
 ### 5. Import Database Thông Qua PHPMyAdmin
 
-- Truy cập vào **PHPMyAdmin** và import cơ sở dữ liệu WordPress.
+🗄️ Truy cập vào **PHPMyAdmin** và import cơ sở dữ liệu WordPress.
 
-🗄️
 <img src="images/day7-16.png" width="400" alt="Import Database" />
 
 ## III. Up Source Code Laravel lên Hosting CyberPanel
 
 ### 1. Tạo Trang Web Với PHP 8.2
 
-Tạo một trang web mới với PHP 8.2 (Laravel yêu cầu PHP 8.0 trở lên).
+📑 Tạo một trang web mới với PHP 8.2 (Laravel yêu cầu PHP 8.0 trở lên).
 
-📑
 <img src="images/day7-17.png" width="400" alt="Create Laravel Website" />
 
 ### 2. Upload Mã Nguồn Laravel và Import Database
@@ -141,9 +130,8 @@ Tạo một trang web mới với PHP 8.2 (Laravel yêu cầu PHP 8.0 trở lên
 
 ### 3. Cấu Hình `.env` File
 
-Mở và chỉnh sửa file `.env` của Laravel để cấu hình kết nối cơ sở dữ liệu:
+⚙️ Mở và chỉnh sửa file `.env` của Laravel để cấu hình kết nối cơ sở dữ liệu:
 
-⚙️
 ```bash
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -155,9 +143,8 @@ DB_PASSWORD=Phuc27012004
 
 ### 4. Sửa Vhost
 
-Cấu hình **Vhost** cho Laravel trong phần **Manage Website**:
+🖥️ Cấu hình **Vhost** cho Laravel trong phần **Manage Website**:
 
-🖥️
 ```bash
 docRoot                   $VH_ROOT/public
 ```
@@ -165,7 +152,3 @@ docRoot                   $VH_ROOT/public
 <img src="images/day7-22.png" width="400" alt="Vhost Configuration" />
 
 ---
-
-## Lời Kết
-
-Đây là hướng dẫn cơ bản để cài đặt và cấu hình CyberPanel với WordPress và Laravel. Sau khi hoàn thành, bạn có thể quản lý các trang web của mình một cách dễ dàng và hiệu quả thông qua CyberPanel.
