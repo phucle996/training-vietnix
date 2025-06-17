@@ -17,7 +17,6 @@ sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/
 <p align="center"><img src="/day7/images/pic2.png" alt="" width="400"/></p>
 
 ### các option khi cài đặt :
-```bash 
 - Chọn install cyberpanel with OpenLiteSpeed
 <p align="center"><img src="/day7/images/pic7-1.png" alt="" width="400"/></p>
 - Full Service (default Y):y
@@ -34,5 +33,4 @@ sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/
 <p align="center"><img src="/day7/images/pic7-7.png" alt="" width="400"/></p>
 - Watchdog (default Yes):
 <p align="center"><img src="/day7/images/pic7-8.png" alt="" width="400"/></p>
-```
 
