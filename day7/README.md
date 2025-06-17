@@ -92,11 +92,11 @@ sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/
   - Tuy nhiên sẽ cần sửa file **.env**
     ```bash
     DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=lara_laravel
-DB_USERNAME=lara_admin
-DB_PASSWORD=Phuc27012004
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=lara_laravel
+    DB_USERNAME=lara_admin
+    DB_PASSWORD=Phuc27012004
 ```
 
   - Sửa Vhost trong phần manage trang web :
