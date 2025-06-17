@@ -24,11 +24,11 @@ sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/
 
 Khi cài đặt CyberPanel, sẽ phải chọn các option sau:
 
- 📥 **Cài đặt CyberPanel**: Chọn `y` để cài đặt.
+ 📥 **Cài đặt CyberPanel**: Chọn `install cyberpanel` để cài đặt.
  
   <img src="images/day7-1.png" width="400" alt="Install CyberPanel" />
 
- ⚡ **Cài đặt với OpenLiteSpeed**: Chọn `y`.
+ ⚡ **Cài đặt với OpenLiteSpeed**: Chọn `install cyberpanel with openlitespeed`.
  
   <img src="images/day7-2.png" width="400" alt="OpenLiteSpeed" />
 
@@ -99,11 +99,13 @@ Khi cài đặt CyberPanel, sẽ phải chọn các option sau:
 
 <img src="images/day7-11.png" width="400" alt="Create Website" />
 
-### 2. Quản Lý Trang Web và Lấy SSL
+### 2. Quản Lý Trang Web
 
 📂 Truy cập vào **File Manager** để tải lên mã nguồn WordPress.
 
 <img src="images/day7-12.png" width="400" alt="File Manager" />
+
+ Tiện lấy cái ssl luôn cho trang web 
 
 ### 3. Upload Mã Nguồn và Giải Nén
 
